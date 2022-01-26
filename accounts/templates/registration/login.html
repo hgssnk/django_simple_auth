@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja-JP" >
+<head>
+    <title>ログイン</title>
+</head>
+
+<body>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="ユーザー名">
+        <input type="password" name="password" placeholder="パスワード">
+        <input type="submit" class="btn btn-primary btn-block" value="ログイン" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+</body>
+</html>
